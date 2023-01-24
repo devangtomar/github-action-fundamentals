@@ -1,114 +1,51 @@
-<p align="center">
-  <a href="" rel="noopener">
- <img width=200px height=200px src="https://i.imgur.com/6wj0hh6.jpg" alt="Project logo"></a>
-</p>
+# Beginner's Guide to Github Actions
 
-<h3 align="center">github-actions-demo</h3>
+This repository contains a beginner's guide to Github Actions, designed for users who are new to the concept of automation with Github.
 
-<div align="center">
+## What are Github Actions?
 
-[![Status](https://img.shields.io/badge/status-active-success.svg)]()
-[![GitHub Issues](https://img.shields.io/github/issues/kylelobo/The-Documentation-Compendium.svg)](https://github.com/kylelobo/The-Documentation-Compendium/issues)
-[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/kylelobo/The-Documentation-Compendium.svg)](https://github.com/kylelobo/The-Documentation-Compendium/pulls)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
+Github Actions is a feature of Github that allows users to automate workflows for their repositories. This includes actions such as building and testing code, deploying applications, and more. Github Actions are defined in YAML files, which can be stored in a repository's .github/workflows directory.
 
-</div>
+## Getting Started
 
----
+To get started with Github Actions, follow these steps:
 
-<p align="center"> Few lines describing your project.
-    <br> 
-</p>
+- Create a new repository on Github or select an existing one to work with.
+- Navigate to the repository's Actions tab.
+- Click on the New workflow button to create a new workflow file.
+- Choose a template or start from scratch and define your workflow steps in YAML format.
+- Save your changes and trigger your workflow by pushing a new commit or creating a pull request.
+Workflow Syntax
 
-## 📝 Table of Contents
+The syntax for Github Actions workflows is based on YAML, a human-readable data serialization language. Here's an example of a simple workflow that triggers on pushes to the master branch:
 
-- [About](#about)
-- [Getting Started](#getting_started)
-- [Deployment](#deployment)
-- [Usage](#usage)
-- [Built Using](#built_using)
-- [TODO](../TODO.md)
-- [Contributing](../CONTRIBUTING.md)
-- [Authors](#authors)
-- [Acknowledgments](#acknowledgement)
-
-## 🧐 About <a name = "about"></a>
-
-Write about 1-2 paragraphs describing the purpose of your project.
-
-## 🏁 Getting Started <a name = "getting_started"></a>
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See [deployment](#deployment) for notes on how to deploy the project on a live system.
-
-### Prerequisites
-
-What things you need to install the software and how to install them.
-
-```
-Give examples
+```yaml
+name: Build and Test
+on:
+  push:
+    branches: [ master ]
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+    - name: Install dependencies
+      run: npm install
+    - name: Build and test code
+      run: npm run build && npm test
 ```
 
-### Installing
+In this example, the workflow is triggered by pushes to the master branch, and consists of a single job that runs on an Ubuntu environment. The job includes three steps: checking out the repository code, installing dependencies, and building and testing the code.
 
-A step by step series of examples that tell you how to get a development env running.
+## Contributing
 
-Say what the step will be
+If you have suggestions or feedback on this guide, please feel free to contribute by creating an issue or a pull request.
 
-```
-Give the example
-```
+## Resources
 
-And repeat
+Here are some additional resources to help you learn more about Github Actions:
 
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo.
-
-## 🔧 Running the tests <a name = "tests"></a>
-
-Explain how to run the automated tests for this system.
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## 🎈 Usage <a name="usage"></a>
-
-Add notes about how to use the system.
-
-## 🚀 Deployment <a name = "deployment"></a>
-
-Add additional notes about how to deploy this on a live system.
-
-## ⛏️ Built Using <a name = "built_using"></a>
-
-- [MongoDB](https://www.mongodb.com/) - Database
-- [Express](https://expressjs.com/) - Server Framework
-- [VueJs](https://vuejs.org/) - Web Framework
-- [NodeJs](https://nodejs.org/en/) - Server Environment
-
-## ✍️ Authors <a name = "authors"></a>
-
-- [@kylelobo](https://github.com/kylelobo) - Idea & Initial work
-
-See also the list of [contributors](https://github.com/kylelobo/The-Documentation-Compendium/contributors) who participated in this project.
-
-## 🎉 Acknowledgements <a name = "acknowledgement"></a>
-
-- Hat tip to anyone whose code was used
-- Inspiration
-- References
+Github Actions Documentation
+Github Actions Marketplace
+Github Actions Community Forum
