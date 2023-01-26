@@ -1,12 +1,12 @@
-# Beginner's Guide to Github Actions
+# Beginner's Guide to Github Actions 🏁
 
 This repository contains a beginner's guide to Github Actions, designed for users who are new to the concept of automation with Github.
 
-## What are Github Actions?
+## What are Github Actions? 🎈
 
 Github Actions is a feature of Github that allows users to automate workflows for their repositories. This includes actions such as building and testing code, deploying applications, and more. Github Actions are defined in YAML files, which can be stored in a repository's .github/workflows directory.
 
-## Getting Started
+## Getting Started ⛏️
 
 To get started with Github Actions, follow these steps:
 
@@ -38,11 +38,11 @@ jobs:
 
 In this example, the workflow is triggered by pushes to the master branch, and consists of a single job that runs on an Ubuntu environment. The job includes three steps: checking out the repository code, installing dependencies, and building and testing the code.
 
-## Contributing
+## Contributing 🎉
 
 If you have suggestions or feedback on this guide, please feel free to contribute by creating an issue or a pull request.
 
-## Resources
+## Resources ✍️
 
 Here are some additional resources to help you learn more about Github Actions:
 
